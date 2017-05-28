@@ -6,24 +6,24 @@ angular.module("app").controller("indexCtrl", function ($scope, $http, todoAPISe
       todoAPIService.insert(obj).success((data, status, headers, config) => {
         getAll();
       }).error((data, status, headers, config) => {
+        alert('Unable to insert item');
         console.log('Unable to insert item: ', data);
       });
   };
 
   $scope.remove = (todo) => {
       todoAPIService.remove(todo).success((data, status, headers, config) => {
-        console.log("Item deleted successfully: " + data.todo.text);
         getAll();
       }).error((data, status, headers, config) => {
-        console.log('Unable to remove item: ', data);
+        alert('Unable to remove item: ', data);
       });
   };
 
   $scope.findById = (id) => {
       todoAPIService.findById(id).success((data, status, headers, config) => {
-        console.log("Item found: " + data.todo.text);
+        alert("Item found: " + data.todo.text);
       }).error((data, status, headers, config) => {
-        console.log('Unable to find item: ', data);
+        alert('Unable to find item: ', data);
       });
   };
 

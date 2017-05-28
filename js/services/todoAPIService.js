@@ -10,7 +10,7 @@ angular.module("app").factory("todoAPIService", function($http, constants) {
 
     var _findById = (id) => {
         return $http({
-           url: constants.apiUrl + id,
+           url: constants.apiUrl + 'todos/' + id,
            method: 'GET'
         });
     }
