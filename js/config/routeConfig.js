@@ -1,16 +1,24 @@
 angular.module("app").config(function ($routeProvider, $httpProvider) {
 
-    // evita cache do navegador
-    //delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    // avoid browser cash
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
-    // dashboard
+    // Todos
     $routeProvider.when("/todos", {
-       templateUrl: "views/todo.html",
+       templateUrl: "views/todos.html",
        controller: "indexCtrl"
     });
 
+    // dashboard
+    $routeProvider.when("/dashboard", {
+       templateUrl: "views/dashboard.html"
+    });
+
+    // Error
     $routeProvider.when("/error", {
        templateUrl: "views/error.html"
     });
+
+    // Redirect
     $routeProvider.otherwise({redirectTo: "/error"});
 });

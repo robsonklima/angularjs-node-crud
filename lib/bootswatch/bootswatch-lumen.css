@@ -269,7 +269,7 @@ th {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  
+
 }
 .glyphicon {
   position: relative;
@@ -4320,7 +4320,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 @media (min-width: 768px) {
   .navbar-toggle {
-    display: none;
+    /*display: none;*/
   }
 }
 .navbar-nav {

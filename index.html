@@ -3,6 +3,7 @@
 	<meta charset="UTF-8">
 	<title>App</title>
 	<link rel="stylesheet" type="text/css" href="lib/bootswatch/bootswatch-lumen.css">
+	<link rel="stylesheet" type="text/css" href="css/css.css">
 
 	<script src="lib/angular/angular.js"></script>
 	<script src="lib/angular/angular-messages.js"></script>
@@ -18,8 +19,8 @@
 
 </head>
 <body>
-
+	<div ng-include="'views/nav.html'"></div>
 	<div ng-view></div>
-
+	<div ng-include="'views/footer.html'"></div>
 </body>
 </html>
