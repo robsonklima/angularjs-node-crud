@@ -1,4 +1,4 @@
-angular.module("app").controller("indexCtrl", function ($scope, $http, todoAPIService) {
+angular.module("app").controller("indexCtrl", function ($scope, $http, $location, todoAPIService) {
   $scope.app = "App";
   $scope.todos = [];
 

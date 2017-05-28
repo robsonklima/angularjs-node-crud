@@ -1,3 +1,3 @@
-angular.module("app", []).run(['$location', '$http', function ($location, $http) {
-  //location.path('/login');
+angular.module("app", ["ngRoute"]).run(['$location', '$location', '$http', function ($location, $http) {
+  
 }]);
