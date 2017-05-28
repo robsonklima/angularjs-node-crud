@@ -1,6 +1,13 @@
 <div class="container">
    <div class="bs-docs-section">
       <div class="row">
+         <div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2">
+             <ui-alert title="Erro" type="danger" message="error" ng-if="error"></ui-alert>
+             <ui-alert title="Mensagem" type="success" message="success" ng-if="success"></ui-alert>
+             <ui-alert title="Mensagem" type="warning" message="warning" ng-if="warning"></ui-alert>
+         </div>
+      </div>
+      <div class="row">
          <div class="col-lg-8 col-lg-offset-2">
             <div class="page-header">
                <h1 id="tables">Todos</h1>
