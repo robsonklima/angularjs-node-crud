@@ -6,7 +6,7 @@ angular.module("app").config(function ($routeProvider, $httpProvider) {
     // Todos
     $routeProvider.when("/todos", {
        templateUrl: "views/todos.html",
-       controller: "indexCtrl"
+       controller: "todoCtrl"
     });
 
     // dashboard

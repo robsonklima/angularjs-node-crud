@@ -1,6 +1,15 @@
-angular.module("app").controller("indexCtrl", function ($scope, $http, $location, todoAPIService) {
+angular.module("app").controller("todoCtrl", function ($scope, $http, $location, todoAPIService) {
   $scope.app = "App";
   $scope.todos = [];
+
+  var getAll = () => {
+      todoAPIService.getAll().success((data, status, headers, config) => {
+        $scope.todos = data.todos;
+      }).error((data, status, headers, config) => {
+        console.log('Unable to get items: ', data);
+        $scope.error = 'Unable to fetch items.';
+      });
+  };
 
   $scope.insert = (obj) => {
       todoAPIService.insert(obj).success((data, status, headers, config) => {
@@ -24,14 +33,6 @@ angular.module("app").controller("indexCtrl", function ($scope, $http, $location
         alert("Item found: " + data.todo.text);
       }).error((data, status, headers, config) => {
         alert('Unable to find item: ', data);
-      });
-  };
-
-  var getAll = () => {
-      todoAPIService.getAll().success((data, status, headers, config) => {
-        $scope.todos = data.todos;
-      }).error((data, status, headers, config) => {
-        console.log('Unable to get items: ', data);
       });
   };
 
