@@ -5,7 +5,8 @@ angular.module("app").controller("todoCtrl", function ($scope, $http, $location,
   var getAll = () => {
       todoAPIService.getAll().success((data, status, headers, config) => {
         $scope.todos = data.todos;
-      }).error((data, status, headers, config) => {
+      })
+      .error((data, status, headers, config) => {
         console.log('Unable to get items: ', data);
         $scope.error = 'Unable to fetch items.';
       });
@@ -14,16 +15,17 @@ angular.module("app").controller("todoCtrl", function ($scope, $http, $location,
   $scope.insert = (obj) => {
       todoAPIService.insert(obj).success((data, status, headers, config) => {
         getAll();
-      }).error((data, status, headers, config) => {
-        alert('Unable to insert item');
-        console.log('Unable to insert item: ', data);
+      })
+      .error((data, status, headers, config) => {
+        console.log('Unable to insert item: ', status);
       });
   };
 
   $scope.remove = (todo) => {
       todoAPIService.remove(todo).success((data, status, headers, config) => {
         getAll();
-      }).error((data, status, headers, config) => {
+      })
+      .error((data, status, headers, config) => {
         alert('Unable to remove item: ', data);
       });
   };
@@ -31,24 +33,29 @@ angular.module("app").controller("todoCtrl", function ($scope, $http, $location,
   $scope.findById = (id) => {
       todoAPIService.findById(id).success((data, status, headers, config) => {
         alert("Item found: " + data.todo.text);
-      }).error((data, status, headers, config) => {
+      })
+      .error((data, status, headers, config) => {
         alert('Unable to find item: ', data);
       });
   };
 
   var update = (todo, id) => {
-      $http({
-         url: 'http://localhost:3000/todos/' + id,
-         method: 'PUT',
-         params: todo
-      }).success((data, status, headers, config) => {
-        console.log('Item updated successfully: ', data);
-      }).error((data, status, headers, config) => {
-        console.log(data);
+      todoAPIService.update(todo, id).success((data, status, headers, config) => {
+         console.log(status);
+      }).
+      error((data, status, headers, config) => {
+         console.log(status);
+         return false;
       });
   };
 
-  //update({text: 'Todo updated from angular', completed: true}, "592a0b48375b9c440ed21560");
+  // var testTodo = {
+  //     text: 'Updated from angularjs and service',
+  //     completed: false
+  // };
+  // var testId = '592c7c7ad7446322449f0607';
+
+  //update(testTodo, testId);
   getAll();
 
 });

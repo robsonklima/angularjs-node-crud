@@ -15,10 +15,6 @@ angular.module("app").factory("todoAPIService", function($http, constants) {
         });
     }
 
-    var _atualizar = (obj) => {
-        return $http.post(constants.apiUrl, obj);
-    }
-
     var _remove = (obj) => {
         return $http({
            url: constants.apiUrl + 'todos/' + obj._id,
@@ -26,11 +22,19 @@ angular.module("app").factory("todoAPIService", function($http, constants) {
         });
     }
 
+    var _update = (obj, id) => {
+        return $http({
+           url: constants.apiUrl + 'todos/' + id,
+           method: 'PATCH',
+           data: obj
+        })
+    }
+
     return {
         getAll: _getAll,
         findById: _findById,
         insert: _insert,
-        atualizar: _atualizar,
+        update: _update,
         remove: _remove
     };
 });
