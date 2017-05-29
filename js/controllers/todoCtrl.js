@@ -1,5 +1,5 @@
 angular.module("app").controller("todoCtrl", function ($scope, $http, $location, todoAPIService) {
-  $scope.app = "App";
+  $scope.title = "Todos";
   $scope.todos = [];
 
   var getAll = () => {
