@@ -4,9 +4,17 @@ angular.module("app").config(function ($routeProvider, $httpProvider) {
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
     // Todos
-    $routeProvider.when("/todos", {
-       templateUrl: "views/todos.html",
-       controller: "todoCtrl"
+    $routeProvider.when("/todo.get", {
+       templateUrl: "views/todo.get.html",
+       controller: "todoGetCtrl"
+    });
+    $routeProvider.when("/todo.add", {
+       templateUrl: "views/todo.add.html",
+       controller: "todoAddCtrl"
+    });
+    $routeProvider.when("/todo.utd/:id", {
+       templateUrl: "views/todo.utd.html",
+       controller: "todoUtdCtrl"
     });
 
     // dashboard

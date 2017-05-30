@@ -22,9 +22,9 @@ angular.module("app").factory("todoAPIService", function($http, constants) {
         });
     }
 
-    var update = (obj, id) => {
+    var update = (obj) => {
         return $http({
-           url: constants.apiUrl + 'todos/' + id,
+           url: constants.apiUrl + 'todos/' + obj._id,
            method: 'PATCH',
            data: obj
         })

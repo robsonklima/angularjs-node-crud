@@ -1,0 +1,43 @@
+<nav class="navbar navbar-inverse">
+   <div class="container-fluid-">
+      <div class="collapse">
+         <ul class="nav navbar-nav">
+            <li>
+               <h5 class="nav-item-title">
+                  <a href="#/{{breadcrumbs.url}}" class="back-link">
+                     {{breadcrumbs.title}}
+                  </a>
+               </h5>
+			      </li>
+         </ul>
+      </div>
+   </div>
+</nav>
+<div class="container">
+
+  <div class="row">
+     <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
+        <div class="bs-component">
+           <div class="alert alert-dismissible alert-danger" ng-if="error">{{error}}</div>
+        </div>
+        <div class="bs-component">
+           <div class="alert alert-dismissible alert-info" ng-if="message">{{message}}</div>
+        </div>
+     </div>
+  </div>
+
+   <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
+         <form name="form">
+            <div class="form-group">
+               <label class="control-label">Text</label>
+               <input class="form-control" type="text" ng-model="todo.text" placeholder="Type text..."> </br>
+               <div class="btn-group btn-group-justified">
+                  <a ng-click="insert(todo)" type="button" class="btn btn-default">Save</a>
+               </div>
+            </div>
+         </form>
+      </div>
+   </div>
+
+</div>
