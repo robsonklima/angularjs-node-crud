@@ -11,7 +11,8 @@ angular.module("app").config(function ($routeProvider, $httpProvider) {
 
     // dashboard
     $routeProvider.when("/dashboard", {
-       templateUrl: "views/dashboard.html"
+       templateUrl: "views/dashboard.html",
+	   controller: "dashboardCtrl"
     });
 
     // Error

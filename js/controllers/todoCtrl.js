@@ -1,61 +1,61 @@
 angular.module("app").controller("todoCtrl", function ($scope, $http, $location, todoAPIService) {
-  $scope.title = "Todos";
+  $scope.breadcrumbs = "Todos";
   $scope.todos = [];
 
-  var getAll = () => {
-      todoAPIService.getAll().success((data, status, headers, config) => {
+  var find = () => {
+      todoAPIService.find().success((data, status, headers, config) => {
         $scope.todos = data.todos;
       })
       .error((data, status, headers, config) => {
-        console.log('Unable to get items: ', data);
         $scope.error = 'Unable to fetch items.';
-      });
-  };
-
-  $scope.insert = (obj) => {
-      todoAPIService.insert(obj).success((data, status, headers, config) => {
-        getAll();
-      })
-      .error((data, status, headers, config) => {
-        console.log('Unable to insert item: ', status);
-      });
-  };
-
-  $scope.remove = (todo) => {
-      todoAPIService.remove(todo).success((data, status, headers, config) => {
-        getAll();
-      })
-      .error((data, status, headers, config) => {
-        alert('Unable to remove item: ', data);
       });
   };
 
   $scope.findById = (id) => {
       todoAPIService.findById(id).success((data, status, headers, config) => {
-        alert("Item found: " + data.todo.text);
+        $scope.message = `Item ${data.todo.text} found.`;
       })
       .error((data, status, headers, config) => {
-        alert('Unable to find item: ', data);
+        $scope.error = 'Unable to find item.';
+      });
+  };
+
+  $scope.insert = (obj) => {
+      todoAPIService.insert(obj).success((data) => {
+        $scope.message = `Item ${data.text} inserted.`;
+        find();
+      })
+      .error((data, status, headers, config) => {
+        $scope.error = 'Unable to insert item.';
       });
   };
 
   var update = (todo, id) => {
       todoAPIService.update(todo, id).success((data, status, headers, config) => {
-         console.log(status);
+         $scope.message = `Item ${data.todo.text} updated successfully.`;
       }).
       error((data, status, headers, config) => {
-         console.log(status);
-         return false;
+         $scope.error = 'Unable to update item.';
+      });
+  };
+
+  $scope.remove = (todo) => {
+      todoAPIService.remove(todo).success((data, status, headers, config) => {
+        $scope.message = `Item ${data.todo.text} removed.`;
+        find();
+      })
+      .error((data, status, headers, config) => {
+        $scope.error = 'Unable to remove item.';
       });
   };
 
   // var testTodo = {
-  //     text: 'Updated from angularjs and service',
+  //     text: 'ANOTHER TITLE',
   //     completed: false
   // };
-  // var testId = '592c7c7ad7446322449f0607';
+  // var testId = '592d69e290f87601182df126';
+  // update(testTodo, testId);
 
-  //update(testTodo, testId);
-  getAll();
+  find();
 
 });

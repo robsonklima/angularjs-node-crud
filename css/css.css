@@ -11,3 +11,44 @@ html {
 .error {
     text-align: center;
 }
+
+.back-link {
+	color: #F2F2F2;
+	text-decoration: none !important;
+}
+
+.back-link:hover {
+	color: #F2F2F2;
+	text-decoration: none !important;
+}
+
+.nav-item-title {
+  margin-left: 30px;
+  padding-top: 17px !important;
+  padding-bottom: 10px !important;
+  line-height: 13px !important;
+  color: #F2F2F2;
+  z-index: 999 !important;
+}
+
+.app-name {
+	padding-top: 15px !important;
+	font-size: 24px;
+	
+}
+
+@media (max-width: 767px) {
+  .collapse {
+    display: block !important;
+    height: 30px !important;
+    margin-top: -12px !important;
+  }
+}
+
+@media (max-width: 1366px) {
+  .collapse {
+    display: block !important;
+    height: 30px !important;
+
+  }
+}

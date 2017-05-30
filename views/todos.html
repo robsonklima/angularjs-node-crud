@@ -1,47 +1,83 @@
-<div class="row" ng-if="error">
-   <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
-       <div class="bs-component"><div class="alert alert-dismissible alert-danger">{{error}}</div></div>
+<nav class="navbar navbar-inverse">
+   <div class="container-fluid-">
+      <div class="collapse">
+         <ul class="nav navbar-nav">
+            <li>
+               <h5 class="nav-item-title"><a href="#/dashboard" class="back-link"><< {{breadcrumbs}}</a></h5>
+			</li>
+         </ul>
+      </div>
    </div>
-</div>
-<div class="row">
-    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
-         <table class="table table-striped table-hover ">
+</nav>
+<div class="container">
+   <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
+         <div class="bs-component">
+            <div class="alert alert-dismissible alert-danger" ng-if="error">{{error}}</div>
+         </div>
+         <div class="bs-component">
+            <div class="alert alert-dismissible alert-info" ng-if="message">{{message}}</div>
+         </div>
+      </div>
+   </div>
+   
+   <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
+         <table class="table responsive table-striped table-hover ">
             <thead>
                <tr>
-                  <th>#</th>
                   <th>Text</th>
-                  <th>Completed</th>
                   <th>Delete</th>
                   <th>Find</th>
                </tr>
             </thead>
             <tbody>
                <tr ng-repeat="todo in todos">
-                  <td>{{todo._id}}</td>
                   <td>{{todo.text}}</td>
-                  <td>{{todo.completed}}</td>
-                  <td><button class="btn btn-primary btn-sm" ng-click="remove(todo)">Remove</button></td>
-                  <td><button class="btn btn-primary btn-sm" ng-click="findById(todo._id)">FindById</button></td>
+				  <td><button class="btn btn-primary btn-sm" ng-click="findById(todo._id)">Update</button></td>
+                  <td><button class="btn btn-primary btn-sm" ng-click="remove(todo)">Delete</button></td>
                </tr>
             </tbody>
          </table>
-    </div>
-</div>
-<div class="row">
-  <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
-      <div class="page-header">
-         <h4>Form</h4>
       </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
-    <form>
-       <div class="form-group">
-          <label class="control-label">Text</label>
-          <input class="form-control" type="text" ng-model="todo.text" placeholder="Type text..."> </br>
-          <button type="button" class="btn btn-primary" ng-click="insert(todo)">Save</button>
+   </div>
+   
+   <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
+        <hr>
+      </div>
+   </div>
+    
+   <div class="row">
+       <div class="col-xs-12 col-xs-offset-0 col-sm-8 col-sm-offset-2 col-md-2 col-md-offset-5">
+           <div class="btn-group btn-group-justified">
+              <a href="#/todos-add" class="btn btn-default">Add</a>
+           </div>
        </div>
-    </form>
-  </div>
+   </div>
+   
+   
+    
+   
+   
+   <!--
+   <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
+         <div class="page-header">
+            <h5>New</h5>
+         </div>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
+         <form>
+            <div class="form-group">
+               <label class="control-label">Text</label>
+               <input class="form-control" type="text" ng-model="todo.text" placeholder="Type text..."> </br>
+               <button type="button" class="btn btn-primary" ng-click="insert(todo)">Save</button>
+            </div>
+         </form>
+      </div>
+   </div>
+   -->
 </div>
