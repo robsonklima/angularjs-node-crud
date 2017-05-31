@@ -1,3 +1,4 @@
-angular.module("app", ["ngRoute"]).run(['$location', '$location', '$http', function ($location, $http) {
+angular.module("app", ["ngRoute", "ngMaterial"]).run(['$rootScope', '$location', '$http',
+    function ($rootScope, $location, $http) {
 
 }]);

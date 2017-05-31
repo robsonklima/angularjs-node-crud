@@ -12,6 +12,10 @@ html {
     text-align: center;
 }
 
+.simple-message {
+  text-align: center;
+}
+
 .back-link {
 	color: #F2F2F2;
 	text-decoration: none !important;
@@ -34,7 +38,7 @@ html {
 .app-name {
 	padding-top: 15px !important;
 	font-size: 24px;
-	
+
 }
 
 @media (max-width: 767px) {
@@ -49,6 +53,23 @@ html {
   .collapse {
     display: block !important;
     height: 30px !important;
-
   }
+}
+
+@media (max-width: 1980px) {
+  .collapse {
+    display: block !important;
+    height: 30px !important;
+  }
+}
+
+.loading {
+    background-image: url('../img/loading.gif');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    filter:alpha(opacity=60); /* IE */
+    -moz-opacity:0.6; /* Mozilla */
+    opacity: 0.6; /* CSS3 */
+    height: 86%;
 }

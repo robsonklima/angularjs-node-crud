@@ -1,4 +1,5 @@
-angular.module("app").controller("todoGetCtrl", function ($scope, $http, $location, todoAPIService) {
+angular.module("app").controller("todoGetCtrl",
+  function ($scope, $http, $location, todoAPIService) {
 
   $scope.breadcrumbs = {
     title: 'App Name . Todos',
@@ -16,16 +17,5 @@ angular.module("app").controller("todoGetCtrl", function ($scope, $http, $locati
       });
   };
 
-  $scope.remove = (todo) => {
-      todoAPIService.remove(todo).success((data, status, headers, config) => {
-        $scope.message = `Item ${data.todo.text} removed.`;
-        find();
-      })
-      .error((data, status, headers, config) => {
-        $scope.error = 'Unable to remove item.';
-      });
-  };
-
   find();
-
 });

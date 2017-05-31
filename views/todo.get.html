@@ -17,39 +17,24 @@
 
    <div class="row">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
-         <div class="bs-component">
-            <div class="alert alert-dismissible alert-danger" ng-if="error">{{error}}</div>
-         </div>
-         <div class="bs-component">
-            <div class="alert alert-dismissible alert-info" ng-if="message">{{message}}</div>
-         </div>
+         <div class="simple-message" ng-if="error">{{error}}</div>
+         <div class="simple-message" ng-if="message">{{message}}</div>
+         <div class="simple-message" ng-if="!todos.length"><span>No results.</span></div>
       </div>
    </div>
 
    <div class="row">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
-         <table class="table responsive table-striped table-hover ">
-            <thead>
-               <tr>
-                  <th>Text</th>
-                  <th>Delete</th>
-                  <th>Find</th>
-               </tr>
-            </thead>
-            <tbody>
-               <tr ng-repeat="todo in todos">
-                  <td>{{todo.text}}</td>
-				          <td><a class="btn btn-primary btn-sm" href="#/todo.utd/{{todo._id}}">Update</a></td>
-                  <td><button class="btn btn-primary btn-sm" ng-click="remove(todo)">Delete</button></td>
-                </tr>
-            </tbody>
-         </table>
+        <a ng-repeat="todo in todos" href="#/todo.utd/{{todo._id}}" class="list-group-item">
+           <h4 class="list-group-item-heading">{{todo.text}}</h4>
+           <p class="list-group-item-text">Completed: {{todo.completed}} Id: {{todo._id}}</p>
+        </a>
       </div>
    </div>
 
    <div class="row">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
-        <hr>
+        </br>
       </div>
    </div>
 
