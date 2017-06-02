@@ -3,7 +3,7 @@ angular.module("app").config(function ($routeProvider, $httpProvider) {
     // avoid browser cash
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
-    // Todos
+    // Mains
     $routeProvider.when("/todo.get", {
        templateUrl: "views/todo.get.html",
        controller: "todoGetCtrl"
@@ -20,12 +20,16 @@ angular.module("app").config(function ($routeProvider, $httpProvider) {
     // dashboard
     $routeProvider.when("/dashboard", {
        templateUrl: "views/dashboard.html",
-	   controller: "dashboardCtrl"
+	     controller: "dashboardCtrl"
     });
 
-    // Error
+    // Error and tests
     $routeProvider.when("/error", {
        templateUrl: "views/error.html"
+    });
+    $routeProvider.when("/test", {
+       templateUrl: "views/test.html",
+       controller: "testCtrl"
     });
 
     // Redirect
