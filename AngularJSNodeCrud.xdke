@@ -1,0 +1,30 @@
+{
+  "project": {
+    "currentBuildConfiguration": "WP81",
+    "projectFiles": {},
+    "projectDirectories": {},
+    "projectSettingsVersion": "3.0.0"
+  },
+  "editorTab": {
+    "currentEditorMode": 0
+  },
+  "simulator": {
+    "cordova-simulate": {
+      "tinyhippos-geosettings": {
+        "id": "tinyhippos-geosettings",
+        "key": "geosettings",
+        "value": "{\"position\":{\"latitude\":-29.9177573,\"longitude\":-50.9163099,\"altitude\":100,\"accuracy\":150,\"altitudeAccuracy\":80,\"heading\":105.145594059406,\"speed\":0,\"timeStamp\":\"new Date(1496513629460)\"},\"delay\":\"4\",\"timeout\":false}",
+        "prefix": "tinyhippos-"
+      },
+      "tinyhippos-geo-map-zoom-key": {
+        "id": "tinyhippos-geo-map-zoom-key",
+        "key": "geo-map-zoom-key",
+        "value": 14,
+        "prefix": "tinyhippos-"
+      }
+    }
+  },
+  "build-tab": {
+    "selectedTargets": []
+  }
+}
