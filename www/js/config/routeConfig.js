@@ -20,6 +20,10 @@ angular.module("app").config(function ($routeProvider, $httpProvider) {
        templateUrl: "views/todo.utd.html",
        controller: "todoUtdCtrl"
     });
+    $routeProvider.when("/places.get", {
+       templateUrl: "views/places.get.html",
+       controller: "placesGetCtrl"
+    });
 
     // dashboard
     $routeProvider.when("/dashboard", {

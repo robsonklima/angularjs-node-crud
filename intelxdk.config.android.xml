@@ -7,14 +7,26 @@
 <name>AngularJSNodeCrud</name>
 <content src="index.html"/>
 <access origin="*"/>
+<icon platform="android" src="package-assets/36x36.png" density="ldpi" width="36" height="36"/>
+<icon platform="android" src="package-assets/48x48.png" density="mdpi" width="48" height="48"/>
+<icon platform="android" src="package-assets/72x72.png" density="hdpi" width="72" height="72"/>
+<icon platform="android" src="package-assets/96x96.png" density="xhdpi" width="96" height="96"/>
+<splash platform="android" src="package-assets/320x426.png" density="ldpi" width="320" height="426" orientation="portrait"/>
+<splash platform="android" src="package-assets/320x470.png" density="mdpi" width="320" height="470" orientation="portrait"/>
+<splash platform="android" src="package-assets/480x640.png" density="hdpi" width="480" height="640" orientation="portrait"/>
+<splash platform="android" src="package-assets/720x960.png" density="xhdpi" width="720" height="960" orientation="portrait"/>
 <intelxdk:plugin intelxdk:name="Compat" intelxdk:value="cordova-plugin-compat" intelxdk:version="1.0.0" intelxdk:checksum="61c62eb" intelxdk:type="file"/>
 <intelxdk:plugin intelxdk:name="Geolocation" intelxdk:value="cordova-plugin-geolocation" intelxdk:version="2.2.0" intelxdk:checksum="ec466374" intelxdk:type="file"/>
 <intelxdk:plugin intelxdk:name="Notification" intelxdk:value="cordova-plugin-dialogs" intelxdk:version="1.2.1" intelxdk:checksum="2948bc11" intelxdk:type="file"/>
+<intelxdk:plugin intelxdk:name="Camera" intelxdk:value="cordova-plugin-camera" intelxdk:version="2.3.0" intelxdk:checksum="42288131" intelxdk:type="file">
+<intelxdk:param intelxdk:name="CAMERA_USAGE_DESCRIPTION" intelxdk:value=" "/>
+<intelxdk:param intelxdk:name="PHOTOLIBRARY_USAGE_DESCRIPTION" intelxdk:value=" "/></intelxdk:plugin>
 <intelxdk:plugin intelxdk:name="Cordova Network Whitelist Plugin (added by Intel XDK)" intelxdk:value="cordova-plugin-whitelist" intelxdk:version="1.2.2"/>
 <preference name="android-minSdkVersion" value="14"/>
 <preference name="android-targetSdkVersion" value="23"/>
 <preference name="android-installLocation" value="auto"/>
 <preference name="android-signed" value="true"/>
 <intelxdk:crosswalk version="19"/>
+<preference name="splashscreen" value="splash"/>
 <!--creationInfo:{"src":"","projectTypeName":"com.intel.xdk.projecttype.jsapp"}-->
 <preference name="debuggable" value="false"/></widget>

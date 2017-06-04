@@ -1,0 +1,26 @@
+<div class="main-nav">
+    <div class="left-child"><a href="#/dashboard"><h5>Back</a></h5></div>
+    <div class="right-child"><h5>Places</h5></div>
+</div>
+
+<div class="container">
+	<div class="row">
+	   <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
+        
+        <div ng-if="errors.length > 0" class="alert">
+            <p ng-repeat="error in errors"><strong>{{error.details}}</strong></p>
+        </div>
+       
+        <div>
+            <a href="" class="list-group-item" ng-repeat="place in places">
+                <h4 class="list-group-item-heading">{{place.order}}. {{place.name}}</h4>
+                <p class="list-group-item-text">{{place.formattedAddress}}</p>
+                <p class="list-group-item-text">{{place.distance}} {{place.duration}}</p>
+            </a>
+        </div>   
+           
+        <br>
+		 
+	  </div>
+	</div>
+</div>

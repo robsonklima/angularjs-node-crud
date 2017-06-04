@@ -13,7 +13,7 @@ angular.module("app").factory("loadingInterceptor", function($q, $timeout, $root
        response: function (response) {
            //$timeout(function(){
                $rootScope.loading = false;
-           //}, 1500);
+           //}, 2500);
 
            return response;
        },
