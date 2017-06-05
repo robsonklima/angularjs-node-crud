@@ -27,6 +27,15 @@ html {
     height: 86%;
 }
 
+.loading-p {
+    margin-top: 20px !important;
+}
+
+md-progress-circular {
+    margin-top: 26px !important;
+    margin-bottom: 18px !important;
+}
+
 .main-nav {
     background-color: #2196F3;
     width: 100%;

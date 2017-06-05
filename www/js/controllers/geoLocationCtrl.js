@@ -1,6 +1,8 @@
 angular.module("app").controller("geoLocationCtrl", function ($scope, $cordovaGeolocation, geoLocationAPIService) {
    
   // Geolocation
+  $scope.errors = [];
+    
   var posOptions = {timeout: 20000, enableHighAccuracy: true};
   document.addEventListener("deviceready", function () {
       $cordovaGeolocation.getCurrentPosition(posOptions).then(function(position) {
@@ -9,8 +11,8 @@ angular.module("app").controller("geoLocationCtrl", function ($scope, $cordovaGe
                    
           findByLatLong($scope.lat, $scope.lng);
           findDrivingRoute($scope.lat, $scope.lng, '-29.9305881', '-50.991873');
-      }, function(err) {
-          $scope.error = err;
+      }, function(error) {
+          $scope.errors.push({details: error.message});
       });
       
   }, false);

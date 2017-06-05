@@ -10,8 +10,8 @@
              
            <p>Geo Location</p>
              
-           <div ng-if="error">
-             <p>{{error}}</p>
+           <div class="alert alert-dismissible alert-danger" ng-if="errors.length > 0">
+               <p ng-repeat="error in errors"><strong>Oops!</strong> {{error.details}}</p>
            </div>
              
            <div ng-if="lat">
@@ -20,7 +20,7 @@
              <hr>
            </div>
              
-           <div ng-if="!error && !lat">
+           <div ng-if="errors.length === 0 && !lat">
              <p>loading...</p>
            </div> 
             

@@ -4,8 +4,9 @@
 	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
 	<title>App Name</title>
 	<link rel="stylesheet" type="text/css" href="lib/bootswatch/bootswatch-paper-min.css">
-	<link rel="stylesheet" type="text/css" href="css/css.css">
-	<link rel="stylesheet" type="text/css" href="lib/material/angular-material.min.css">
+    <link rel="stylesheet" type="text/css" href="css/css.css">
+    <link rel="stylesheet" type="text/css" href="lib/material/angular-material.min.css">
+	
 
 	<script src="lib/angular/angular.js"></script>
 	<script src="lib/angular/angular-messages.js"></script>
@@ -41,10 +42,10 @@
 </head>
 <body>
 	<!-- loading -->
-	<div class="loading" ng-show="loading"></div>
+	<!--<div class="loading" ng-show="loading"></div>-->
 	<!-- content -->
-	<div ng-view ng-hide="loading"></div>
+	<div ng-view></div>
 	<!-- Footer -->
-	<div ng-include="'views/footer.html'" ng-hide="loading"></div>
+	<div ng-include="'views/footer.html'"></div>
 </body>
 </html>

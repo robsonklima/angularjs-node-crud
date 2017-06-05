@@ -1,5 +1,7 @@
 angular.module("app").controller("placesGetCtrl", function ($scope, $cordovaGeolocation, geoLocationAPIService) {
     
+	$scope.loading = true;
+	
     $scope.places = [
         {order: 1, name: 'Casa do Pai', address: 'Rua Neiva da Costa 867 Gravataí RS'},
         {order: 2, name: 'Minha Casa', address: 'Rua Pinto Bandeira 461 Gravataí RS'},
@@ -22,29 +24,36 @@ angular.module("app").controller("placesGetCtrl", function ($scope, $cordovaGeol
           var myLng = position.coords.longitude;
           
           angular.forEach($scope.places, function(value, key) {
-              geoLocationAPIService.findByAddress($scope.places[key].address).success(function(data, status, headers, config) {
-                if (data.status === 'OK') {
-                    $scope.places[key].lat = data.results[0].geometry.location.lat;
-                    $scope.places[key].lng = data.results[0].geometry.location.lng;
-                    $scope.places[key].formattedAddress = data.results[0].formatted_address;
-
-                    geoLocationAPIService.findDrivingRoute(myLat, myLng, $scope.places[key].lat, $scope.places[key].lng).success(function(data, status, headers, config) {
-                      $scope.places[key].distance = data.rows[0].elements[0].distance.text;
-                      $scope.places[key].duration = data.rows[0].elements[0].duration.text;
-
-                    }).error(function(data, status, headers, config) {
-                        $scope.places[key].distance = 'Unable to find distance.';          
-                        $scope.places[key].duration = 'Unable to find duration.';          
-                    });
-                } else {
+              geoLocationAPIService.findByAddress($scope.places[key].address).success(function(data, status) {
+                if (data.status !== 'OK') {
                     $scope.places[key].formattedAddress = 'Unable to find address.';
-                }       
-              }).error(function(data, status, headers, config) {
+                    return
+                }
+                    
+                $scope.places[key].lat = data.results[0].geometry.location.lat;
+                $scope.places[key].lng = data.results[0].geometry.location.lng;
+                $scope.places[key].formattedAddress = data.results[0].formatted_address;
+                geoLocationAPIService.findDrivingRoute(myLat, myLng, $scope.places[key].lat, $scope.places[key].lng).success(function(data, status) {
+                  if (data.rows[0].elements[0].status === 'ZERO_RESULTS') {
+                      $scope.places[key].distance = 'Unable to find distance.';          
+                      $scope.places[key].duration = 'Unable to find duration.';            
+                      return
+                  }
+
+                  $scope.places[key].distance = data.rows[0].elements[0].distance.text;
+                  $scope.places[key].duration = data.rows[0].elements[0].duration.text;
+                }).error(function(data, status) {
+                    $scope.places[key].distance = 'Unable to find distance.';          
+                    $scope.places[key].duration = 'Unable to find duration.';          
+                });
+              }).error(function(data, status) {
                   $scope.places[key].formattedAddress = 'Unable to find address.';
               });
           }, $scope.places);
       }, function(error) {
           $scope.errors.push({details: error.message});
+      }).finally(function() {
+        $scope.loading = false;
       });
     }, false);
     
