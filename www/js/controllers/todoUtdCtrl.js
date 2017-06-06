@@ -1,4 +1,4 @@
-angular.module("app").controller("todoUtdCtrl",
+app.controller("todoUtdCtrl",
   function ($scope, $http, $location, $route, $routeParams, $mdDialog,
     $mdToast, todoAPIService) {
 

@@ -1,4 +1,4 @@
-angular.module("app").controller("todoAddCtrl",
+app.controller("todoAddCtrl",
   function ($scope, $http, $location, $mdToast, todoAPIService) {
 
   $scope.insert = function(obj) {

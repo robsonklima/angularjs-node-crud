@@ -1,4 +1,4 @@
-angular.module("app").controller("geoLocationCtrl", function ($scope, $cordovaGeolocation, geoLocationAPIService) {
+app.controller("geoLocationCtrl", function ($scope, $cordovaGeolocation, geoLocationAPIService) {
    
   // Geolocation
   $scope.errors = [];

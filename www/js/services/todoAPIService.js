@@ -1,4 +1,4 @@
-angular.module("app").factory("todoAPIService", function($http, constants) {
+app.factory("todoAPIService", function($http, constants) {
 
     var _find = function() {
         return $http({

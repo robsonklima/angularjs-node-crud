@@ -1,4 +1,4 @@
-angular.module("app").controller("todoGetCtrl",
+app.controller("todoGetCtrl",
   function ($scope, $http, $location, todoAPIService) {
 
   $scope.breadcrumbs = {

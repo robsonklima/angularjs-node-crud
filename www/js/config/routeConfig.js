@@ -1,4 +1,4 @@
-angular.module("app").config(function ($routeProvider, $httpProvider) {
+app.config(function ($routeProvider, $httpProvider) {
 
     // avoid browser cash
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
@@ -23,6 +23,10 @@ angular.module("app").config(function ($routeProvider, $httpProvider) {
     $routeProvider.when("/places.get", {
        templateUrl: "views/places.get.html",
        controller: "placesGetCtrl"
+    });
+    $routeProvider.when("/place.find", {
+       templateUrl: "views/place.find.html",
+       controller: "placeFindCtrl"
     });
 
     // dashboard

@@ -1,4 +1,4 @@
-angular.module("app").controller("placesGetCtrl", function ($scope, $cordovaGeolocation, geoLocationAPIService) {
+app.controller("placesGetCtrl", function ($scope, $cordovaGeolocation, geoLocationAPIService) {
     
 	$scope.loading = true;
 	

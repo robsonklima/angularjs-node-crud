@@ -1,4 +1,4 @@
-angular.module("app").factory("geoLocationAPIService", function($http, constants) {
+app.factory("geoLocationAPIService", function($http, constants) {
 
     var _findDrivingRoute = function(latOrigin, lngOrigin, latDestiny, lngDestiny) {
         return $http({
