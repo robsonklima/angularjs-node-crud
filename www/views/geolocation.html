@@ -1,29 +1,29 @@
 <div class="main-nav">
     <div class="left-child"><a href="#/dashboard"><h5>Back</a></h5></div>
-    <div class="right-child"><h5>Geo Location</h5></div>
+    <div class="center-child"><h5>Geo Location</h5></div>
 </div>
 
 <div class="container">
 	<div class="row">
 	   <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
 		 <div>
-             
+
            <p>Geo Location</p>
-             
+
            <div class="alert alert-dismissible alert-danger" ng-if="errors.length > 0">
                <p ng-repeat="error in errors"><strong>Oops!</strong> {{error.details}}</p>
            </div>
-             
+
            <div ng-if="lat">
-             <p><strong>Latitude</strong> {{lat}} - <strong>Longitude</strong> {{lng}}</p> 
+             <p><strong>Latitude</strong> {{lat}} - <strong>Longitude</strong> {{lng}}</p>
              <p><strong>Address</strong> {{address}}</p>
              <hr>
            </div>
-             
+
            <div ng-if="errors.length === 0 && !lat">
              <p>loading...</p>
-           </div> 
-            
+           </div>
+
            <div ng-if="lat">
                <p>Driving Route</p>
                <p><strong>Origin</strong> {{drivingRoute.origin_addresses}}</p>
@@ -31,7 +31,7 @@
                <p><strong>Distance</strong> {{drivingRoute.distance}}</p>
                <p><strong>Duration</strong> {{drivingRoute.duration}}</p>
            </div>
-         
+
 		 </div>
 	  </div>
 	</div>
