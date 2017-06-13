@@ -9,7 +9,7 @@ app.controller("todoUtdCtrl",
 
   var findById = function(id) {
       todoAPIService.findById(id).success(function(data, status, headers, config) {
-        $scope.todo = data.todo;
+        $scope.todo = data.todos[0];
       }).error(function(data, status, headers, config) {
         $mdToast.show($mdToast.simple().textContent('Unable to find item.')
           .hideDelay(1000).position('top right'));
@@ -18,8 +18,9 @@ app.controller("todoUtdCtrl",
 
   $scope.update = function(todo) {
       todoAPIService.update(todo).success(function(data, status, headers, config) {
-        $mdToast.show($mdToast.simple().textContent('Item ' + data.todo.text + ' updated.')
+        $mdToast.show($mdToast.simple().textContent(data.details.affectedRows + ' item(s) updated.')
           .hideDelay(1000).position('top right'));
+          $location.path('todo.get');
       }).error(function(data, status, headers, config) {
         $mdToast.show($mdToast.simple().textContent('Unable to update item.')
           .hideDelay(1000).position('top right'));
@@ -32,7 +33,7 @@ app.controller("todoUtdCtrl",
 
       $mdDialog.show(confirm).then(function() {
         todoAPIService.remove(todo).success(function(data, status, headers, config) {
-           $mdToast.show($mdToast.simple().textContent('Item ' + data.todo.text + ' removed.')
+           $mdToast.show($mdToast.simple().textContent(data.details.affectedRows + ' item(s) removed.')
             .hideDelay(1000).position('top right'));
            $location.path('todo.get');
         }).error(function(data, status, headers, config) {

@@ -13,7 +13,7 @@
       "tinyhippos-geosettings": {
         "id": "tinyhippos-geosettings",
         "key": "geosettings",
-        "value": "{\"position\":{\"latitude\":-29.84446275529909,\"longitude\":-51.114024033510645,\"altitude\":100,\"accuracy\":150,\"altitudeAccuracy\":80,\"heading\":105.145594059406,\"speed\":0,\"timeStamp\":\"new Date(1496789361681)\"},\"delay\":\"3\",\"timeout\":false}",
+        "value": "{\"position\":{\"latitude\":-29.87304661096114,\"longitude\":-51.12501036163571,\"altitude\":100,\"accuracy\":150,\"altitudeAccuracy\":80,\"heading\":105.145594059406,\"speed\":0,\"timeStamp\":\"new Date(1497312944404)\"},\"delay\":\"3\",\"timeout\":false}",
         "prefix": "tinyhippos-"
       },
       "tinyhippos-geo-map-zoom-key": {

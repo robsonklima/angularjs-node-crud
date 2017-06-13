@@ -24,15 +24,15 @@ app.factory("todoAPIService", function($http, constants) {
 
     var _update = function(obj) {
         return $http({
-           url: constants.apiUrl + 'todos/' + obj._id,
-           method: 'PATCH',
+           url: constants.apiUrl + 'todos/' + obj.id,
+           method: 'PUT',
            data: obj
         })
     }
 
     var _remove = function(obj) {
         return $http({
-           url: constants.apiUrl + 'todos/' + obj._id,
+           url: constants.apiUrl + 'todos/' + obj.id,
            method: 'DELETE'
         });
     }

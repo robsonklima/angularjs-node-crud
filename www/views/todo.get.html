@@ -1,6 +1,7 @@
 <div class="main-nav">
-    <div class="left-child"><a href="#/dashboard"><h5>Back</a></h5></div>
-    <div class="right-child"><h5>Todos</h5></div>
+    <div class="left-child"><a href="#/dashboard"><h5>Back</h5></a></div>
+    <div class="center-child"><h5>Todos</h5></div>
+    <div class="right-child"><a href="#/todo.add"><h5>Add</h5></a></div>
 </div>
 
 <!--<ul class="breadcrumb" style="margin-top: -22px;">
@@ -20,9 +21,9 @@
 
    <div class="row">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
-        <a ng-repeat="todo in todos" href="#/todo.utd/{{todo._id}}" class="list-group-item">
+        <a ng-repeat="todo in todos" href="#/todo.utd/{{todo.id}}" class="list-group-item">
            <h4 class="list-group-item-heading">{{todo.text}}</h4>
-           <p class="list-group-item-text">Completed: {{todo.completed}} Id: {{todo._id}}</p>
+           <p class="list-group-item-text">Id: {{todo.id}}</p>
         </a>
       </div>
    </div>
@@ -32,15 +33,5 @@
         </br>
       </div>
    </div>
-
-   <div class="row">
-       <div class="col-xs-12 col-xs-offset-0 col-sm-8 col-sm-offset-2 col-md-2 col-md-offset-5">
-           <div class="btn-group btn-group-justified">
-              <a href="#/todo.add" class="btn btn-default">Add</a>
-           </div>
-       </div>
-   </div>
-   
-   <br>
 
 </div>
