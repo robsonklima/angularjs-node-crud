@@ -17,10 +17,6 @@
 <splash platform="android" src="package-assets/720x960.png" density="xhdpi" width="720" height="960" orientation="portrait"/>
 <intelxdk:plugin intelxdk:name="Compat" intelxdk:value="cordova-plugin-compat" intelxdk:version="1.0.0" intelxdk:checksum="61c62eb" intelxdk:type="file"/>
 <intelxdk:plugin intelxdk:name="Geolocation" intelxdk:value="cordova-plugin-geolocation" intelxdk:version="2.2.0" intelxdk:checksum="ec466374" intelxdk:type="file"/>
-<intelxdk:plugin intelxdk:name="Notification" intelxdk:value="cordova-plugin-dialogs" intelxdk:version="1.2.1" intelxdk:checksum="2948bc11" intelxdk:type="file"/>
-<intelxdk:plugin intelxdk:name="Camera" intelxdk:value="cordova-plugin-camera" intelxdk:version="2.3.0" intelxdk:checksum="42288131" intelxdk:type="file">
-<intelxdk:param intelxdk:name="CAMERA_USAGE_DESCRIPTION" intelxdk:value=" "/>
-<intelxdk:param intelxdk:name="PHOTOLIBRARY_USAGE_DESCRIPTION" intelxdk:value=" "/></intelxdk:plugin>
 <intelxdk:plugin intelxdk:name="Cordova Network Whitelist Plugin (added by Intel XDK)" intelxdk:value="cordova-plugin-whitelist" intelxdk:version="1.2.2"/>
 <preference name="android-minSdkVersion" value="14"/>
 <preference name="android-targetSdkVersion" value="23"/>

@@ -1,0 +1,35 @@
+<div class="main-nav">
+    <div class="left-child"><a href="#/dashboard"><h5>Back</a></h5></div>
+    <div class="center-child"><h5>Places</h5></div>
+</div>
+
+<div class="separator"></div>
+
+<div class="container">
+	<div class="row">
+	   <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
+        
+        <div ng-show="loading" class="loading">
+            <div class="loading-content">
+                <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+           
+        <div class="alert alert-dismissible alert-danger" ng-show="errors.length > 0 && !loading">
+            <p ng-repeat="error in errors"><strong>Oops!</strong> {{error.details}}</p>
+        </div>
+       
+        <div>
+            <a href="" class="list-group-item" ng-repeat="place in places" ng-show="!loading">
+                <h4 class="list-group-item-heading">{{place.order}}. {{place.name}}</h4>
+                <p class="list-group-item-text">{{place.formattedAddress}}</p>
+                <p class="list-group-item-text">{{place.distance}} {{place.duration}}</p>
+            </a>
+        </div>   
+           
+        <br>
+		 
+	  </div>
+	</div>
+</div>

@@ -1,12 +1,4 @@
 {
-    "cordova-plugin-geolocation": {
-        "source": {
-            "type": "local",
-            "path": "C:\\Users\\Principal\\AppData\\Local\\Intel\\XDK\\xdk\\components\\server\\cordova\\cordova-plugins\\cordova-plugin-geolocation"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
     "cordova-plugin-compat": {
         "source": {
             "type": "local",
@@ -15,18 +7,10 @@
         "is_top_level": false,
         "variables": {}
     },
-    "cordova-plugin-dialogs": {
+    "cordova-plugin-geolocation": {
         "source": {
             "type": "local",
-            "path": "C:\\Users\\Principal\\AppData\\Local\\Intel\\XDK\\xdk\\components\\server\\cordova\\cordova-plugins\\cordova-plugin-dialogs"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
-    "cordova-plugin-camera": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-camera@2.3.0"
+            "path": "C:\\Users\\Principal\\AppData\\Local\\Intel\\XDK\\xdk\\components\\server\\cordova\\cordova-plugins\\cordova-plugin-geolocation"
         },
         "is_top_level": true,
         "variables": {}

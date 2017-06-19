@@ -9,12 +9,6 @@
     "installed_plugins": {
         "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "HelloCordova"
-        },
-        "cordova-plugin-dialogs": {
-            "PACKAGE_NAME": "HelloCordova"
-        },
-        "cordova-plugin-camera": {
-            "PACKAGE_NAME": "HelloCordova"
         }
     },
     "dependent_plugins": {

@@ -5,7 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "",
       "projectGuid": "802d7d2e-c1d7-4ca3-b63b-35d0b8affe73",
-      "lastModifiedDate": 1496599466003,
+      "lastModifiedDate": 1497833514796,
       "creationDate": 1496444809504
     },
     "testDirectory": "test",
@@ -253,8 +253,7 @@
         "description": "Cordova Compatibility Plugin",
         "data": {},
         "dependedBy": [
-          "cordova-plugin-geolocation",
-          "cordova-plugin-camera"
+          "cordova-plugin-geolocation"
         ],
         "custom": "true"
       },
@@ -280,51 +279,6 @@
           ]
         },
         "description": "Cordova Geolocation Plugin",
-        "data": {},
-        "dependedBy": []
-      },
-      {
-        "id": "cordova-plugin-dialogs",
-        "name": "Notification",
-        "version": "1.2.1",
-        "originType": "cordova.io",
-        "origin": "cordova-plugin-dialogs",
-        "gitref": "",
-        "paramvals": {},
-        "sourceLocation": "plugins/cordova-plugin-dialogs",
-        "selectedState": "Included",
-        "checksum": "2948bc11",
-        "dependsOn": [],
-        "topLevel": true,
-        "permissions": {},
-        "description": "Cordova Notification Plugin",
-        "data": {},
-        "dependedBy": []
-      },
-      {
-        "id": "cordova-plugin-camera",
-        "name": "Camera",
-        "version": "2.3.0",
-        "originType": "cordova.io",
-        "origin": "cordova-plugin-camera",
-        "gitref": "",
-        "paramvals": {
-          "CAMERA_USAGE_DESCRIPTION": " ",
-          "PHOTOLIBRARY_USAGE_DESCRIPTION": " "
-        },
-        "sourceLocation": "plugins/cordova-plugin-camera",
-        "selectedState": "Included",
-        "checksum": "42288131",
-        "dependsOn": [
-          "cordova-plugin-compat"
-        ],
-        "topLevel": true,
-        "permissions": {
-          "android:name": [
-            "android.permission.WRITE_EXTERNAL_STORAGE"
-          ]
-        },
-        "description": "Cordova Camera Plugin",
         "data": {},
         "dependedBy": []
       }

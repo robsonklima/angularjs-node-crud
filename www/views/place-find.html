@@ -1,0 +1,46 @@
+<div class="main-nav">
+    <div class="left-child"><a href="#/dashboard"><h5>Back</a></h5></div>
+    <div class="center-child"><h5>Address Search</h5></div>
+</div>
+
+<div class="separator"></div>
+
+<div class="container">
+  <div layout="row" layout-sm="column" layout-align="space-around" ng-show="loading" class="loading-p">
+     <p>Loading...</p>
+  </div>
+    
+  <div class="alert alert-dismissible alert-danger" ng-show="errors.length > 0 && !loading">
+     <p ng-repeat="error in errors"><strong>Oops!</strong> {{error.details}}</p>
+  </div>
+  
+  <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
+         <form name="form">
+            <div class="form-group">
+               <label class="control-label">Address</label>
+               <input class="form-control" type="text" ng-model="address" placeholder="Type address..." 
+                      ng-required="true" name="address" ng-minlength="5"/>
+               <div ng-show="form.address.$dirty" ng-messages="form.address.$error">
+                   <p class="help-block-error" ng-message="required">Please, type the address!</p>
+                   <p class="help-block-error" ng-message="minlength">The address field must be at least 5 characters long.</p>
+               </div>
+            </div>
+            <div class="btn-group btn-group-justified">
+                <a ng-click="findByAddress(address)" type="button" class="btn btn-default"
+                   ng-disabled="form.$invalid">Search</a>
+            </div> 
+          </form>
+      </div>
+  </div>
+
+  <div class="panel panel-default" ng-if="place.formattedAddress">
+      <div class="panel-body">
+        Address: {{place.formattedAddress}} <br>
+        Distance: {{place.distance}} <br>
+        Duration: {{place.duration}} <br>
+      </div>
+  </div>
+
+</div>
+

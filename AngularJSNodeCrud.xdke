@@ -13,18 +13,20 @@
       "tinyhippos-geosettings": {
         "id": "tinyhippos-geosettings",
         "key": "geosettings",
-        "value": "{\"position\":{\"latitude\":-29.87304661096114,\"longitude\":-51.12501036163571,\"altitude\":100,\"accuracy\":150,\"altitudeAccuracy\":80,\"heading\":105.145594059406,\"speed\":0,\"timeStamp\":\"new Date(1497312944404)\"},\"delay\":\"3\",\"timeout\":false}",
+        "value": "{\"position\":{\"latitude\":-29.952013347308927,\"longitude\":-51.006420149503384,\"altitude\":100,\"accuracy\":150,\"altitudeAccuracy\":80,\"heading\":105.145594059406,\"speed\":0,\"timeStamp\":\"new Date(1497848350865)\"},\"delay\":\"3\",\"timeout\":false}",
         "prefix": "tinyhippos-"
       },
       "tinyhippos-geo-map-zoom-key": {
         "id": "tinyhippos-geo-map-zoom-key",
         "key": "geo-map-zoom-key",
-        "value": 8,
+        "value": 15,
         "prefix": "tinyhippos-"
       }
     }
   },
   "build-tab": {
-    "selectedTargets": []
+    "selectedTargets": [
+      "CORDOVA_ANDROID"
+    ]
   }
 }
