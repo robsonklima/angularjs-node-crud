@@ -5,7 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "",
       "projectGuid": "802d7d2e-c1d7-4ca3-b63b-35d0b8affe73",
-      "lastModifiedDate": 1497833514796,
+      "lastModifiedDate": 1497919997696,
       "creationDate": 1496444809504
     },
     "testDirectory": "test",
@@ -43,7 +43,7 @@
         },
         "isActive_": true,
         "certificateId_": "uFgrPJ6-7E6ljCVK9BbYyA2",
-        "appName_": "AngularJSNodeCrud",
+        "appName_": "Angular App",
         "appID_": "not.yet.specified",
         "appAccess_": {
           "mode": "whitelist",
@@ -114,7 +114,8 @@
         "appVersionCode_": "1",
         "signed_": true,
         "crosswalkVersion_": "19",
-        "cordovaCLIVersion_": "6.2.0"
+        "cordovaCLIVersion_": "6.2.0",
+        "appDescription_": "Angular App"
       },
       "iOS": {
         "platform_": "ios",

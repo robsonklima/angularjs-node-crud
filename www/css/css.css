@@ -11,7 +11,8 @@ html {
 }
 
 #map_canvas {
-    position: relative;
+    position: fixed;
+    z-index: 1;
 }
 
 .angular-google-map-container {
@@ -23,10 +24,14 @@ html {
 }
 
 .footer {
+    z-index: -1000;
     text-align: center;
     margin-top: 10px;
     margin-bottom: 20px;
+    
 }
+
+.login-form { }
 
 .error {
     text-align: center;
@@ -37,7 +42,7 @@ html {
 }
 
 .loading {
-    height: 80%;
+    height: 5%;
     width: 100%;
     vertical-align: center;
 }
