@@ -5,7 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "",
       "projectGuid": "802d7d2e-c1d7-4ca3-b63b-35d0b8affe73",
-      "lastModifiedDate": 1497919997696,
+      "lastModifiedDate": 1497998225718,
       "creationDate": 1496444809504
     },
     "testDirectory": "test",
@@ -44,7 +44,7 @@
         "isActive_": true,
         "certificateId_": "uFgrPJ6-7E6ljCVK9BbYyA2",
         "appName_": "Angular App",
-        "appID_": "not.yet.specified",
+        "appID_": "com.angular.app",
         "appAccess_": {
           "mode": "whitelist",
           "network": [
@@ -280,6 +280,28 @@
           ]
         },
         "description": "Cordova Geolocation Plugin",
+        "data": {},
+        "dependedBy": []
+      },
+      {
+        "id": "cordova-plugin-network-information",
+        "name": "Network Information",
+        "version": "1.2.1",
+        "originType": "cordova.io",
+        "origin": "cordova-plugin-network-information",
+        "gitref": "",
+        "paramvals": {},
+        "sourceLocation": "plugins/cordova-plugin-network-information",
+        "selectedState": "Included",
+        "checksum": "9d8331a4",
+        "dependsOn": [],
+        "topLevel": true,
+        "permissions": {
+          "android:name": [
+            "android.permission.ACCESS_NETWORK_STATE"
+          ]
+        },
+        "description": "Cordova Network Information Plugin",
         "data": {},
         "dependedBy": []
       }

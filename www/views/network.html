@@ -1,0 +1,34 @@
+<div class="main-nav">
+    <div class="left-child"><a href="#/dashboard"><h5>Back</a></h5></div>
+    <div class="center-child"><h5>Network</h5></div>
+</div>
+
+<div class="separator"></div>
+
+<div class="container">
+	<div class="row">
+	   <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
+		 <table class="table table-striped table-hover ">
+          <thead>
+            <tr>
+              <th colspan="2">Network Information</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Network Type</td>
+              <td>{{ networkType }}</td>
+            </tr>
+            <tr class="success" ng-show="isOnline">
+              <td>Status</td>
+              <td>Online</td>
+            </tr>
+            <tr class="danger" ng-show="isOffline">
+              <td>Status</td>
+              <td>Offline</td>
+            </tr>
+          </tbody>
+        </table> 
+	  </div>
+	</div>
+</div>

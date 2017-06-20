@@ -32,6 +32,10 @@ app.config(function ($routeProvider, $httpProvider) {
        templateUrl: "views/map.html",
        controller: "mapCtrl"
     });
+    $routeProvider.when("/network", {
+       templateUrl: "views/network.html",
+       controller: "networkCtrl"
+    });
 
     // dashboard
     $routeProvider.when("/dashboard", {

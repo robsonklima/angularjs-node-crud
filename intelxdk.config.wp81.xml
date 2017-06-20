@@ -9,5 +9,6 @@
 <access origin="*"/>
 <intelxdk:plugin intelxdk:name="Compat" intelxdk:value="cordova-plugin-compat" intelxdk:version="1.0.0" intelxdk:checksum="61c62eb" intelxdk:type="file"/>
 <intelxdk:plugin intelxdk:name="Geolocation" intelxdk:value="cordova-plugin-geolocation" intelxdk:version="2.2.0" intelxdk:checksum="ec466374" intelxdk:type="file"/>
+<intelxdk:plugin intelxdk:name="Network Information" intelxdk:value="cordova-plugin-network-information" intelxdk:version="1.2.1" intelxdk:checksum="9d8331a4" intelxdk:type="file"/>
 <!--creationInfo:{"src":"","projectTypeName":"com.intel.xdk.projecttype.jsapp"}-->
 <preference name="debuggable" value="false"/></widget>
