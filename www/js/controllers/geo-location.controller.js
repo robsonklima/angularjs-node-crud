@@ -1,7 +1,6 @@
 app.controller("geoLocationCtrl", function ($scope, $cordovaGeolocation, geoLocationAPIService) {
-   
-  // Geolocation
   $scope.errors = [];
+  $scope.loading = true;
     
   var posOptions = {timeout: 20000, enableHighAccuracy: true};
   document.addEventListener("deviceready", function () {
@@ -13,12 +12,17 @@ app.controller("geoLocationCtrl", function ($scope, $cordovaGeolocation, geoLoca
           findDrivingRoute($scope.lat, $scope.lng, '-29.9305881', '-50.991873');
       }, function(error) {
           $scope.errors.push({details: error.message});
+      }).finally(function() {
+          $scope.loading = false;
       });
       
   }, false);
     
   var findDrivingRoute = function(latOrigin, lngOrigin, latDestiny, lngDestiny) {
-      geoLocationAPIService.findDrivingRoute(latOrigin, lngOrigin, latDestiny, lngDestiny).success(function(data) {
+      geoLocationAPIService.findDrivingRoute(latOrigin, lngOrigin, latDestiny, lngDestiny).success(function(data, status) {
+          if (data.rows[0].elements[0].status !== "OK")
+              return;
+          
           $scope.drivingRoute = {
               origin_addresses: data.origin_addresses[0],
               destination_addresses: data.destination_addresses[0],

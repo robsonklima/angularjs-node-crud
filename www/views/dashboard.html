@@ -1,37 +1,39 @@
 <div class="main-nav">
     <div class="center-child"><h5>App Name</h5></div>
 </div>
-
 <div class="separator"></div>
-
 <div class="container">
    <div class="row">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
-         <div class="bs-component">
-            <div class="list-group">
-               <a href="#/todo.get" class="list-group-item">
-                  <h4 class="list-group-item-heading">Todos</h4>
-               </a>
-               <a href="#/geolocation" class="list-group-item">
-                  <h4 class="list-group-item-heading">Geolocation</h4>
-               </a>
-               <a href="#/places.get" class="list-group-item">
-                  <h4 class="list-group-item-heading">Places</h4>
-               </a>
-               <a href="#/place.find" class="list-group-item">
-                  <h4 class="list-group-item-heading">Find Place</h4>
-               </a>
-               <a href="#/map" class="list-group-item">
-                  <h4 class="list-group-item-heading">Map</h4>
-               </a>
-               <a href="#/network" class="list-group-item">
-                  <h4 class="list-group-item-heading">Network</h4>
-               </a>
-               <a href="#/test" class="list-group-item">
-                  <h4 class="list-group-item-heading">Test Page</h4>
-               </a>
-            </div>
-         </div>
+        <div class="list-group">
+            
+           <div class="alert" ng-class="{'alert-success': isConnected, 'alert-danger': !isConnected}" ng-show="!isConnected">
+                <p>You're {{ isConnected ? 'Connected' : 'Disconnected' }}</p>
+           </div>
+            
+           <a href="#/todo.get" class="list-group-item">
+              <h4 class="list-group-item-heading">Todos</h4>
+           </a>
+           <a href="#/geolocation" class="list-group-item" ng-class="{ 'disabled': !isConnected }">
+              <h4 class="list-group-item-heading">Geolocation</h4>
+           </a>
+           <a href="#/places.get" class="list-group-item" ng-class="{ 'disabled': !isConnected }">
+              <h4 class="list-group-item-heading">Places</h4>
+           </a>
+           <a href="#/place.find" class="list-group-item" ng-class="{ 'disabled': !isConnected }">
+              <h4 class="list-group-item-heading">Find Place</h4>
+           </a>
+           <a href="#/map" class="list-group-item" ng-class="{ 'disabled': !isConnected }">
+              <h4 class="list-group-item-heading">Map</h4>
+           </a>
+           <a href="#/test" class="list-group-item">
+              <h4 class="list-group-item-heading">Test Page</h4>
+           </a>
+           <a href="#/login" class="list-group-item">
+              <h4 class="list-group-item-heading">Sign Out</h4>
+           </a>
+            
+        </div>
       </div>
    </div>
 </div>

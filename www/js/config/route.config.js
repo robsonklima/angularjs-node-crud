@@ -5,8 +5,10 @@ app.config(function ($routeProvider, $httpProvider) {
 
     // Mains
     $routeProvider.when("/", {
-       templateUrl: "views/dashboard.html",
-        controller: "dashboardCtrl"
+       templateUrl: "views/login.html"
+    });
+    $routeProvider.when("/login", {
+       templateUrl: "views/login.html"
     });
     $routeProvider.when("/todo.get", {
        templateUrl: "views/todo-get.html",
@@ -31,10 +33,6 @@ app.config(function ($routeProvider, $httpProvider) {
     $routeProvider.when("/map", {
        templateUrl: "views/map.html",
        controller: "mapCtrl"
-    });
-    $routeProvider.when("/network", {
-       templateUrl: "views/network.html",
-       controller: "networkCtrl"
     });
 
     // dashboard
