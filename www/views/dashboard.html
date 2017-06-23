@@ -6,10 +6,9 @@
    <div class="row">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
         <div class="list-group">
-            
-           <div class="alert" ng-class="{'alert-success': isConnected, 'alert-danger': !isConnected}" ng-show="!isConnected">
-                <p>You're {{ isConnected ? 'Connected' : 'Disconnected' }}</p>
-           </div>
+           <!--div class="alert" ng-class="{'alert-success': isConnected, 'alert-danger': !isConnected}" ng-show="!isConnected">
+                <p>You're {{ isConnected ? 'Connected' : 'Not Connected' }}</p>
+           </div-->
             
            <a href="#/todo.get" class="list-group-item">
               <h4 class="list-group-item-heading">Todos</h4>
@@ -23,7 +22,7 @@
            <a href="#/place.find" class="list-group-item" ng-class="{ 'disabled': !isConnected }">
               <h4 class="list-group-item-heading">Find Place</h4>
            </a>
-           <a href="#/map" class="list-group-item" ng-class="{ 'disabled': !isConnected }">
+           <a href="#/map" class="list-group-item" ng-class="{ 'disabled': !isConnected || !myLatitude || !myLongitude }">
               <h4 class="list-group-item-heading">Map</h4>
            </a>
            <a href="#/test" class="list-group-item">
@@ -32,8 +31,22 @@
            <a href="#/login" class="list-group-item">
               <h4 class="list-group-item-heading">Sign Out</h4>
            </a>
-            
         </div>
+          
+        <div class="center-text backup-top">
+            
+            
+          <p class="text-default" ng-if="myLatitude && myLongitude">
+              I'm here: Lat {{ myLatitude | number:4 }}, Lon {{ myLongitude | number:4 }}
+          </p>
+          <p class="text-danger" ng-if="!myLatitude && !myLongitude">
+              GPS Connection: Not Connected
+          </p>
+          <p ng-class="{'text-default': isConnected, 'text-danger': !isConnected}">
+              Network Status: {{ isConnected ? 'Connected' : 'Not Connected' }}</p>
+          <p class=""></p>
+        </div>
+          
       </div>
    </div>
 </div>

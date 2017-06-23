@@ -41,6 +41,14 @@ html {
     vertical-align: center;
 }
 
+.backup-top {
+    margin-top: 26px;
+}
+
+.center-text {
+    text-align: center;
+}
+
 .loading-content {
     width: 12%;
     margin: 0 auto;
